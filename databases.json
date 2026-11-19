@@ -6,8 +6,88 @@
       "descricao": "PHC – Meivcore"
     },
     {
+      "name": "sisLOGS",
+      "descricao": "PHC – Logs"
+    },
+    {
+      "name": "MCGRHDefault",
+      "descricao": "PHC RH – Base modelo (default)"
+    },
+    {
+      "name": "RHAutielvolt",
+      "descricao": "PHC RH – Autielvolt"
+    },
+    {
+      "name": "RHAveirisol",
+      "descricao": "PHC RH – Aveirisol"
+    },
+    {
+      "name": "RHFmmv",
+      "descricao": "PHC RH – Fmmv"
+    },
+    {
+      "name": "RHHidroquimica",
+      "descricao": "PHC RH – Hidroquimica"
+    },
+    {
+      "name": "RHIronCrew",
+      "descricao": "PHC RH – IronCrew"
+    },
+    {
+      "name": "RHIsonewt",
+      "descricao": "PHC RH – Isonewt"
+    },
+    {
+      "name": "RHLuisAguiar",
+      "descricao": "PHC RH – LuisAguiar"
+    },
+    {
+      "name": "RHMeivCertification",
+      "descricao": "PHC RH – MeivCertification"
+    },
+    {
+      "name": "RHMeivCompetition",
+      "descricao": "PHC RH – MeivCompetition"
+    },
+    {
+      "name": "RHMeivcoreAmbiente",
+      "descricao": "PHC RH – MeivcoreAmbiente"
+    },
+    {
+      "name": "RHMeivcoreHSG",
+      "descricao": "PHC RH – MeivcoreHSG"
+    },
+    {
+      "name": "RHMeivStation",
+      "descricao": "PHC RH – MeivStation"
+    },
+    {
+      "name": "RHMeivTraining",
+      "descricao": "PHC RH – MeivTraining"
+    },
+    {
       "name": "RHPondus",
       "descricao": "PHC RH – Pondus"
+    },
+    {
+      "name": "RHSgps",
+      "descricao": "PHC RH – Sgps"
+    },
+    {
+      "name": "RHSlm",
+      "descricao": "PHC RH – Slm"
+    },
+    {
+      "name": "RHSystema",
+      "descricao": "PHC RH – Systema"
+    },
+    {
+      "name": "RHTermiso",
+      "descricao": "PHC RH – Termiso"
+    },
+    {
+      "name": "RHTubogal",
+      "descricao": "PHC RH – Tubogal"
     }
   ]
 }
