@@ -2,7 +2,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE FUNCTION [dbo].[Phc_SalaryTransf]
+ALTER FUNCTION [dbo].[Phc_SalaryTransf]
 (
 	@DataI Date
 	,@DataF Date
@@ -82,9 +82,10 @@ RETURN
 			LEFT JOIN sq_src ON sq_pr.prstamp=sq_src.prstamp 
 			INNER JOIN tb ON sq_src.tbstamp=tb.tbstamp and tb.sr=1
 		WHERE isnull(ValorSRC,0)<>0 
-	)
+	),
 
-	SELECT 
+	sq_lin AS (
+	SELECT
 		T0.Transf
 		,T0.Data
 		,T0.Nome
@@ -107,6 +108,29 @@ RETURN
 		,'Banco' = T1.Bank
 	FROM sq_movs T0
 		INNER JOIN aa_transf_config T1 ON T0.Tipo = T1.TType
+	)
+
+	-- Débitos: detalhe por linha (o agrupamento por BP/Conta/Tipo é feito na query de consumo)
+	SELECT Transf, Data, Nome, Tipo, Debito, Credito, Conta, BP, Banco
+	FROM sq_lin
+	WHERE Debito <> 0
+
+	UNION ALL
+
+	-- Créditos: uma única linha por transferência e banco, com o total da transferência
+	SELECT
+		Transf
+		,Data
+		,'Nome' = NULL
+		,'Tipo' = CASE WHEN MIN(Tipo) = MAX(Tipo) THEN MIN(Tipo) ELSE 'TOTAL TRANSFERÊNCIA' END
+		,'Debito' = 0
+		,'Credito' = SUM(Credito)
+		,'Conta' = Banco
+		,'BP' = Banco
+		,Banco
+	FROM sq_lin
+	WHERE Credito <> 0
+	GROUP BY Transf, Data, Banco
 
 )
 GO
