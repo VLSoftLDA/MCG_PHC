@@ -1,0 +1,13 @@
+{
+  "_comment": "Bases de dados PHC no SQL Server. O servidor e as credenciais vêm do .env (PHC_SQL_*).",
+  "databases": [
+    {
+      "name": "sisPHCMeivcore",
+      "descricao": "PHC – Meivcore"
+    },
+    {
+      "name": "RHPondus",
+      "descricao": "PHC RH – Pondus"
+    }
+  ]
+}

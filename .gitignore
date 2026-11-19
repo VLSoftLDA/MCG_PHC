@@ -1,0 +1,14 @@
+# Credenciais
+.env
+.env.*
+!.env.example
+
+# Visual FoxPro - ficheiros compilados / temporários
+*.fxp
+*.err
+*.bak
+*.tbk
+*.$$$
+
+# macOS
+.DS_Store
